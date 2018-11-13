@@ -1,6 +1,6 @@
 const db = require('./models')
 
-db.sync({force: true})
+db.sync({force: false})
   .then(() => {
     console.log('Database synced!')
   })
@@ -8,6 +8,7 @@ db.sync({force: true})
     console.log('Disaster! Something went wrong! ')
     console.log(err)
   })
+
   .finally(() => { 
     db.close()
     console.log('Closing');
